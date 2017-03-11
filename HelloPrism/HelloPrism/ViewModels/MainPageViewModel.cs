@@ -24,7 +24,7 @@ namespace HelloPrism.ViewModels
             _navigationService = navigationService;
             GotoP2Command = new DelegateCommand(async () => {
                 Title = "I've press the putton";
-                await _navigationService.NavigateAsync("P2");
+                await _navigationService.NavigateAsync("P2Page");
             });
         }
 

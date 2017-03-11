@@ -5,8 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
 
         <Button Text="Goto P2"
                 Command="{Binding GotoP2Command}" />

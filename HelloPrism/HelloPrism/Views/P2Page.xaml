@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="HelloPrism.Views.P2">
-    <StackLayout HorizontalOptions="Center" 
-                 VerticalOptions="Center">
-        <Label Text="This is P2"/>
+             x:Class="HelloPrism.Views.P2Page"
+             BackgroundColor="Green">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}"/>
     </StackLayout>
 
 </ContentPage>

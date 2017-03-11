@@ -2,9 +2,9 @@
 
 namespace HelloPrism.Views
 {
-    public partial class P2 : ContentPage
+    public partial class P2Page : ContentPage
     {
-        public P2()
+        public P2Page()
         {
             InitializeComponent();
         }

@@ -5,23 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HelloPrism.ViewModels.Views
+namespace HelloPrism.ViewModels
 {
-    public class P2ViewModel : BindableBase, INavigationAware
+    public class P2PageViewModel : BindableBase, INavigationAware
     {
         private string _title;
-        public String Title {
-            get {
-                return _title;
-            }
-            set {
-                SetProperty(ref _title, value);
-            }
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
         }
 
-        public P2ViewModel()
+        public P2PageViewModel()
         {
-
+            Title = "This is P2";
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -31,7 +28,6 @@ namespace HelloPrism.ViewModels.Views
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-
         }
     }
 }
