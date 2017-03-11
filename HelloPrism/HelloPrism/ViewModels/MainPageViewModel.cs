@@ -9,6 +9,9 @@ namespace HelloPrism.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
+        public DelegateCommand GotoP2Command { get; set; }
+        private readonly INavigationService _navigationService;
+
         private string _title;
         public string Title
         {
@@ -16,9 +19,13 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainPageViewModel()
+        public MainPageViewModel(INavigationService navigationService)
         {
-
+            _navigationService = navigationService;
+            GotoP2Command = new DelegateCommand(async () => {
+                Title = "I've press the putton";
+                await _navigationService.NavigateAsync("P2");
+            });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
