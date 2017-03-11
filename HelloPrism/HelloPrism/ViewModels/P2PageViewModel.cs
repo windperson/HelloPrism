@@ -16,6 +16,15 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        private string _param;
+
+        public string Param
+        {
+            get { return _param; }
+            set { SetProperty(ref _param, value); }
+        }
+
+
         public P2PageViewModel()
         {
             Title = "This is P2";
@@ -28,6 +37,10 @@ namespace HelloPrism.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
+            if (parameters.ContainsKey("UserInput"))
+            {
+                Param = parameters["UserInput"] as string;
+            }
         }
     }
 }

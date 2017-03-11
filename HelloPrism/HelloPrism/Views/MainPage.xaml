@@ -8,6 +8,7 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
 
+        <Editor Text="{Binding UserInput}"/>
         <Button Text="Goto P2"
                 Command="{Binding GotoP2Command}" />
     </StackLayout>
