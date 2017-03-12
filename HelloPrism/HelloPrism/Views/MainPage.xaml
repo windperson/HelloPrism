@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage"
-             BackgroundColor="Green">
+             BackgroundColor="Green"
+             NavigationPage.HasNavigationBar="True">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Button Text="Go to Page1" Command="{Binding SwitchPageCommand}"/>
         <Button Text="Depp Navigation" Command="{Binding DeepNaviCommand}" />

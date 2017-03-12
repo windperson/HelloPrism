@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.P2Page"
              Title="Page2"
-             BackgroundColor="Red">
+             BackgroundColor="Red"
+             NavigationPage.HasNavigationBar="True">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Button Text="to Page3" Command="{Binding SwitchPageCommand}"/>
     </StackLayout>
