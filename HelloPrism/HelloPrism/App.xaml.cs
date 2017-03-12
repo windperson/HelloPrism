@@ -1,5 +1,6 @@
 ﻿using Prism.Unity;
 using HelloPrism.Views;
+using Xamarin.Forms;
 
 namespace HelloPrism
 {
@@ -11,7 +12,7 @@ namespace HelloPrism
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void RegisterTypes()
