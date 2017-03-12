@@ -8,6 +8,9 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}"/>
         <Label Text="{Binding Param}" FontSize="Large"/>
+
+        <Button Text="Select..." Command="{Binding SelectCommand}" />
+        <Button Text="Warning" Command="{Binding WarningCommand}" />
     </StackLayout>
 
 </ContentPage>
