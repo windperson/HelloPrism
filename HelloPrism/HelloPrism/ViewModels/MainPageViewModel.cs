@@ -9,7 +9,7 @@ namespace HelloPrism.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        public DelegateCommand GotoP2Command { get; set; }
+        public DelegateCommand LoginCommand { get; set; }
         private readonly INavigationService _navigationService;
 
         private string _title;
@@ -19,22 +19,32 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
+        private string _account = "";
+        public string Account
         {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            get { return _account; }
+            set {
+                SetProperty(ref _account, value);
+                LoginCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        private string _enterAccount="please input account";
+        public string EnterAccount
+        {
+            get { return _enterAccount; }
+            set { SetProperty(ref _enterAccount, value); }
         }
 
 
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
+            LoginCommand = new DelegateCommand(() =>
             {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
+                _navigationService.NavigateAsync($"Page2?Account={Account}");
+            },() => {
+                return !String.IsNullOrEmpty(_account);
             });
         }
 

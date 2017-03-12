@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
-    public class P2PageViewModel : BindableBase, INavigationAware
+    public class Page2ViewModel : BindableBase, INavigationAware
     {
         private string _title;
         public string Title
@@ -16,18 +16,9 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _param;
-
-        public string Param
+        public Page2ViewModel()
         {
-            get { return _param; }
-            set { SetProperty(ref _param, value); }
-        }
 
-
-        public P2PageViewModel()
-        {
-            Title = "This is P2";
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -37,10 +28,10 @@ namespace HelloPrism.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("UserInput"))
+            if (parameters.ContainsKey("Account"))
             {
-                Param = parameters["UserInput"] as string;
-            }
+                Title = parameters["Account"] as string;
+            }     
         }
     }
 }
