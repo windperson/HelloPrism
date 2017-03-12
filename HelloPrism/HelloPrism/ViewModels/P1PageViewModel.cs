@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace HelloPrism.ViewModels
 {
@@ -25,8 +26,14 @@ namespace HelloPrism.ViewModels
         {
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public async void OnNavigatedTo(NavigationParameters parameters)
         {
+            await ViewModelInit();
+        }
+
+        private async Task ViewModelInit()
+        {
+            await Task.Delay(100);
         }
     }
 }

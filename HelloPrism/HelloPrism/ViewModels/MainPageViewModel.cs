@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace HelloPrism.ViewModels
 {
@@ -21,19 +22,23 @@ namespace HelloPrism.ViewModels
             SwitchPageCommand = new DelegateCommand(() => {
                 _navigationService.NavigateAsync("P1Page");
             });
-            DeepNaviCommand = new DelegateCommand(() => {
-                _navigationService.NavigateAsync("P1Page/P2Page/P3Page");
+            DeepNaviCommand = new DelegateCommand(async() => {
+                await _navigationService.NavigateAsync("P1Page/P2Page/P3Page");
             });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-
+            
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public async void OnNavigatedTo(NavigationParameters parameters)
         {
-       
+            await ViewModelInit();
+        }
+        private async Task ViewModelInit()
+        {
+            await Task.Delay(100);
         }
     }
 }
