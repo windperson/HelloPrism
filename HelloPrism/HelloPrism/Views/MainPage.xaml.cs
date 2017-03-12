@@ -7,6 +7,10 @@ namespace HelloPrism.Views
         public MainPage()
         {
             InitializeComponent();
+
+            GotoBtn.Clicked += (s, e) => {
+                Navigation.PushAsync(new P2Page(),false);
+            };
         }
     }
 }

@@ -10,6 +10,6 @@
 
         <Editor Text="{Binding UserInput}"/>
         <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+                x:Name="GotoBtn" />
     </StackLayout>
 </ContentPage>
