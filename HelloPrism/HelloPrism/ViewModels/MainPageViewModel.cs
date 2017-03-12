@@ -27,13 +27,14 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _userInput, value); }
         }
 
-
-        public MainPageViewModel(INavigationService navigationService)
+        ISayHello _sayHello;
+        public MainPageViewModel(INavigationService navigationService, ISayHello sayHello)
         {
+            _sayHello = sayHello;
             _navigationService = navigationService;
             GotoP2Command = new DelegateCommand(async () =>
             {
-                Title = "I've press the putton";
+                Title = _sayHello.Hello();
                 await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
             });
         }
