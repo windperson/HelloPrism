@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -24,10 +25,27 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _param, value); }
         }
 
-
-        public P2PageViewModel()
+        private string _subData;
+        public string SubData
         {
+            get { return _subData; }
+            set { SetProperty(ref _subData, value); }
+        }
+
+        public DelegateCommand GoBackCommand { get; set; }
+
+        private readonly INavigationService _navigationService;
+        private readonly IEventAggregator _eventAggregator;
+        public P2PageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+        {
+            _navigationService = navigationService;
+            _eventAggregator = eventAggregator;
             Title = "This is P2";
+
+            GoBackCommand = new DelegateCommand(() => {
+                _eventAggregator.GetEvent<GoBackEvent>().Publish(SubData);
+                _navigationService.GoBackAsync();
+            });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

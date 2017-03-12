@@ -8,6 +8,9 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}"/>
         <Label Text="{Binding Param}" FontSize="Large"/>
+
+        <Entry Text="{Binding SubData}"/>
+        <Button Text="Go back" Command="{Binding GoBackCommand}"/>
     </StackLayout>
 
 </ContentPage>

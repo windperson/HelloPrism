@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -27,13 +28,17 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _userInput, value); }
         }
 
-
-        public MainPageViewModel(INavigationService navigationService)
+        private readonly IEventAggregator _eventAggregator;
+        public MainPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
         {
             _navigationService = navigationService;
+            _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<GoBackEvent>().Subscribe((evt) => {
+                Title = $"SubData={evt}";
+            });
+
             GotoP2Command = new DelegateCommand(async () =>
             {
-                Title = "I've press the putton";
                 await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
             });
         }
