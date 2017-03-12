@@ -7,46 +7,67 @@ using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class MainPageViewModel : BindableBase
     {
-        public DelegateCommand GotoP2Command { get; set; }
-        private readonly INavigationService _navigationService;
-
-        private string _title;
-        public string Title
+        private bool _isText1=true;
+        public bool RenderText1
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get { return _isText1; }
+            set { SetProperty(ref _isText1, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
+        private double _text1Opacity = 1.0;
+        public double HideText1
         {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            get { return _text1Opacity; }
+            set { SetProperty(ref _text1Opacity, value); }
         }
 
-
-        public MainPageViewModel(INavigationService navigationService)
+        private double _text2Opacity = 1.0;
+        public double HideText2
         {
-            _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
+            get { return _text2Opacity; }
+            set { SetProperty(ref _text2Opacity, value); }
+        }
+
+        private bool _isText2 = true;
+        public bool RenderText2
+        {
+            get { return _isText2; }
+            set { SetProperty(ref _isText2, value); }
+        }
+
+        public DelegateCommand ToggleText1Command { get; set; }
+        public DelegateCommand ToggleText2Command { get; set; }
+
+        public DelegateCommand HideText1Command { get; set; }
+        public DelegateCommand HideText2Command { get; set; }
+
+
+        public MainPageViewModel()
+        {
+            ToggleText1Command = new DelegateCommand(() => { RenderText1 = !RenderText1; });
+            ToggleText2Command = new DelegateCommand(() => { RenderText2 = !RenderText2; });
+            HideText1Command = new DelegateCommand(() => {
+                if(HideText1 > 0.0 )
+                {
+                    HideText1 = 0.0;
+                }
+                else
+                {
+                    HideText1 = 1.0;
+                }
             });
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-            if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
+            HideText2Command = new DelegateCommand(() => {
+                if (HideText2 > 0.0)
+                {
+                    HideText2 = 0.0;
+                }
+                else
+                {
+                    HideText2 = 1.0;
+                }
+            });
         }
     }
 }

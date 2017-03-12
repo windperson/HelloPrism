@@ -6,10 +6,17 @@
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Text1" IsVisible="{Binding RenderText1}" Opacity="{Binding HideText1}"/>
+            <Label Text="Text2" IsVisible="{Binding RenderText2}" Opacity="{Binding HideText2}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Text1 IsVisible" Command="{Binding ToggleText1Command}"/>
+            <Button Text="Text1 Opacity" Command="{Binding HideText1Command}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Text2 IsVisible" Command="{Binding ToggleText2Command}"/>
+            <Button Text="Text2 Opacity" Command="{Binding HideText2Command}"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
