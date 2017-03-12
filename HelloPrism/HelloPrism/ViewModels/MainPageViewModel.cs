@@ -23,13 +23,14 @@ namespace HelloPrism.ViewModels
         public string Account
         {
             get { return _account; }
-            set {
+            set
+            {
                 SetProperty(ref _account, value);
-                LoginCommand.RaiseCanExecuteChanged();
+                //LoginCommand.RaiseCanExecuteChanged();
             }
         }
 
-        private string _enterAccount="please input account";
+        private string _enterAccount = "please input account";
         public string EnterAccount
         {
             get { return _enterAccount; }
@@ -43,9 +44,8 @@ namespace HelloPrism.ViewModels
             LoginCommand = new DelegateCommand(() =>
             {
                 _navigationService.NavigateAsync($"Page2?Account={Account}");
-            },() => {
-                return !String.IsNullOrEmpty(_account);
-            });
+            },
+            () => !String.IsNullOrEmpty(Account)).ObservesProperty(() => Account);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
