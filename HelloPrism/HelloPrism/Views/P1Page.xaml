@@ -8,7 +8,8 @@
              BackgroundColor="Blue"
              NavigationPage.HasNavigationBar="True">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="This is P1" FontSize="Large" TextColor="White"/>
         <Button Text="to Page2" Command="{Binding SwitchPageCommand}"/>
     </StackLayout>
-  
+
 </ContentPage>

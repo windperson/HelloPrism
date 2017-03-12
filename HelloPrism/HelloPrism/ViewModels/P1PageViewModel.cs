@@ -17,8 +17,9 @@ namespace HelloPrism.ViewModels
         public P1PageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            SwitchPageCommand = new DelegateCommand(async() => {
-               await  _navigationService.NavigateAsync("P2Page");
+            SwitchPageCommand = new DelegateCommand(async () =>
+            {
+                await _navigationService.NavigateAsync("P2Page");
             });
         }
 
@@ -33,7 +34,7 @@ namespace HelloPrism.ViewModels
 
         private async Task ViewModelInit()
         {
-            await Task.Delay(100);
+            await Task.Delay(1000);
         }
     }
 }
