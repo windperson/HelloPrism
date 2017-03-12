@@ -7,33 +7,26 @@ using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class P1PageViewModel : BindableBase, INavigationAware
     {
-
-        public DelegateCommand SwitchPageCommand { get; set; }
-        public DelegateCommand DeepNaviCommand { get; set; }
-
         private readonly INavigationService _navigationService;
 
-        public MainPageViewModel(INavigationService navigationService)
+        public DelegateCommand SwitchPageCommand { get; set; }
+
+        public P1PageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             SwitchPageCommand = new DelegateCommand(() => {
-                _navigationService.NavigateAsync("P1Page");
-            });
-            DeepNaviCommand = new DelegateCommand(() => {
-                _navigationService.NavigateAsync("P1Page/P2Page/P3Page");
+                _navigationService.NavigateAsync("P2Page");
             });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-       
         }
     }
 }

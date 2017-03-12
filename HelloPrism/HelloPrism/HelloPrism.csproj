@@ -35,11 +35,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ViewModels\MainPrismNaviPageViewModel.cs" />
+    <Compile Include="ViewModels\P1PageViewModel.cs" />
+    <Compile Include="ViewModels\P3PageViewModel.cs" />
+    <Compile Include="Views\MainPrismNaviPage.xaml.cs">
+      <DependentUpon>MainPrismNaviPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\P1Page.xaml.cs">
+      <DependentUpon>P1Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\P2Page.xaml.cs">
       <DependentUpon>P2Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="Views\P3Page.xaml.cs">
+      <DependentUpon>P3Page.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -99,6 +111,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\P2Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\P1Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\P3Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPrismNaviPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

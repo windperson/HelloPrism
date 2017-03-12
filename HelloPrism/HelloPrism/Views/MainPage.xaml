@@ -4,12 +4,10 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
-             Title="MainPage">
+             Title="MainPage"
+             BackgroundColor="Green">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <Button Text="Go to Page1" Command="{Binding SwitchPageCommand}"/>
+        <Button Text="Depp Navigation" Command="{Binding DeepNaviCommand}" />
     </StackLayout>
 </ContentPage>

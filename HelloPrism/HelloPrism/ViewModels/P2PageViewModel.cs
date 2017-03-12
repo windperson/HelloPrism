@@ -9,25 +9,17 @@ namespace HelloPrism.ViewModels
 {
     public class P2PageViewModel : BindableBase, INavigationAware
     {
-        private string _title;
-        public string Title
+        private readonly INavigationService _navigationService;
+
+        public DelegateCommand SwitchPageCommand { get; set; }
+
+        public P2PageViewModel(INavigationService navigationService)
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
-
-        private string _param;
-
-        public string Param
-        {
-            get { return _param; }
-            set { SetProperty(ref _param, value); }
-        }
-
-
-        public P2PageViewModel()
-        {
-            Title = "This is P2";
+            _navigationService = navigationService;
+            SwitchPageCommand = new DelegateCommand(() =>
+            {
+                _navigationService.NavigateAsync("P3Page");
+            });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -37,10 +29,6 @@ namespace HelloPrism.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("UserInput"))
-            {
-                Param = parameters["UserInput"] as string;
-            }
-        }
+               }
     }
 }

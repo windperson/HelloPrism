@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="HelloPrism.Views.P2Page"
-             Title="Page2"
-             BackgroundColor="Red">
+             x:Class="HelloPrism.Views.P3Page"
+             Title="Page3"
+             BackgroundColor="Purple">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Button Text="to Page3" Command="{Binding SwitchPageCommand}"/>
+        
     </StackLayout>
-
 </ContentPage>
