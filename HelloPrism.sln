@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloPrism", "HelloPrism\HelloPrism\HelloPrism.csproj", "{D8585F5A-C4DF-4ECE-BBF6-017C68DE8CCF}"
 EndProject
@@ -227,7 +227,9 @@ Global
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.AppStore|x86.ActiveCfg = Release|x86
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.AppStore|x86.Build.0 = Release|x86
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.AppStore|x86.Deploy.0 = Release|x86
-		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|Any CPU.ActiveCfg = Debug|ARM
+		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|Any CPU.Build.0 = Debug|ARM
+		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|Any CPU.Deploy.0 = Debug|ARM
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|ARM.ActiveCfg = Debug|ARM
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|ARM.Build.0 = Debug|ARM
 		{4540119C-FFC8-45A5-B63F-80BF4E8B6A8F}.Debug|ARM.Deploy.0 = Debug|ARM

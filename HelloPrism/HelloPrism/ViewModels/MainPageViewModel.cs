@@ -25,8 +25,9 @@ namespace HelloPrism.ViewModels
             });
             DeepNaviCommand = new DelegateCommand(() =>
             {
-                _navigationService.NavigateAsync(new Uri("P1Page/P2Page/P3Page", UriKind.Relative),
-                    useModalNavigation: true, animated: true);
+                _navigationService.NavigateAsync(new Uri("P1Page/P2Page/P3Page",
+                    UriKind.Relative),
+                    useModalNavigation: false, animated: true);
             });
         }
 
