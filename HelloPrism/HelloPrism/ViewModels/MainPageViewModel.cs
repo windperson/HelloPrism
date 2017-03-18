@@ -1,15 +1,16 @@
-﻿using Prism.Commands;
+﻿using HelloPrism.DataEntities;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        public DelegateCommand GotoP2Command { get; set; }
         private readonly INavigationService _navigationService;
 
         private string _title;
@@ -19,23 +20,25 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
+        private ObservableCollection<Student> _students = new ObservableCollection<Student>();
+        public ObservableCollection<Student> Students
         {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            get { return _students; }
+            set { SetProperty(ref _students, value); }
         }
-
 
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
+            
+            for(int i = 1; i <= 50; i++)
             {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
+                _students.Add(new Student {
+                    Name = "st" + i,
+                    ID = "ID00" + i,
+                    Age = (uint)(10 + i)
+                });
+            }
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
