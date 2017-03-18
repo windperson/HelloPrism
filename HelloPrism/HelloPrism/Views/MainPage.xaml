@@ -34,14 +34,14 @@
             Grid.Row="1" Grid.Column="2"
             Color="Aqua"/>
         <StackLayout Grid.Row="2" Grid.Column="0">
-            <Label Text="Red BoxView's"/>
-            <Label Text="Grid.ColumnSpan"/>
+            <Label Text="ColumnSpan"/>
+            <Label Text="Oversize"/>
             <Label Text="Bug?"/>
         </StackLayout>
-        <BoxView Grid.Row="2" Grid.Column="1" 
-                 Grid.ColumnSpan="3"
-                 Color="Red">
-        </BoxView>
+        <Button Text="Tengen Toppa Gurren Lagann !!!" 
+                Grid.Row="2" Grid.Column="1" 
+                Grid.ColumnSpan="3">
+        </Button>
         <BoxView
             Grid.Row="2" Grid.Column="2"
             Color="Green"/>
