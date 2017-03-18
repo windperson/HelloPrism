@@ -9,9 +9,6 @@ namespace HelloPrism.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        public DelegateCommand GotoP2Command { get; set; }
-        private readonly INavigationService _navigationService;
-
         private string _title;
         public string Title
         {
@@ -19,23 +16,10 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
-        {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
-        }
-
 
         public MainPageViewModel(INavigationService navigationService)
         {
-            _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
+            
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -46,7 +30,7 @@ namespace HelloPrism.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
+                Title = (string)parameters["title"] + " in Xamarin.Forms!";
         }
     }
 }

@@ -8,8 +8,12 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
 
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <Label Text="&#xf00c;" HorizontalOptions="Center" FontSize="60" Margin="0,0,20,0">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String"
+                             Android="fontawesome"/>
+            </Label.FontFamily>
+        </Label>
+
     </StackLayout>
 </ContentPage>

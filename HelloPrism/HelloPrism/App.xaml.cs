@@ -11,13 +11,12 @@ namespace HelloPrism
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("MainPage?title=Use%20Render%20to%20load%20custom%20font");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<P2Page>();
         }
     }
 }
