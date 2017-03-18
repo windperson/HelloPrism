@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace HelloPrism.ViewModels
 {
@@ -24,18 +25,30 @@ namespace HelloPrism.ViewModels
         public string UserInput
         {
             get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            set {
+                SetProperty(ref _userInput, value);
+                if(value.Length < 5)
+                {
+                    InputColor = Color.Red;
+                }
+                else
+                {
+                    InputColor = Color.Black;
+                }
+            }
+        }
+
+        private Color _inputColor;
+        public Color InputColor
+        {
+            get { return _inputColor; }
+            set { SetProperty(ref _inputColor, value); }
         }
 
 
         public MainPageViewModel(INavigationService navigationService)
         {
-            _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
+            InputColor = Color.Red;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
