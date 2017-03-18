@@ -5,11 +5,18 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
-    </StackLayout>
+    <ScrollView Orientation="Vertical">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding Title}"/>
+            <Entry Placeholder="Please enter"/>
+            <Editor Text="Multi Line\nAnother Line" HeightRequest="200" />
+            <BoxView HorizontalOptions="Center" Color="Green" WidthRequest="50" HeightRequest="50"/>
+            <Image Source="icon.png" WidthRequest="100" HeightRequest="100"/>
+            <DatePicker Date="{Binding TheDate}"/>
+            <TimePicker Format="HH:mm:ss" Time="{Binding TheTime}" />
+            <WebView Source="https://www.google.com" HeightRequest="300" />
+            <ActivityIndicator IsRunning="True" />
+            <ProgressBar Progress="0.7"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
