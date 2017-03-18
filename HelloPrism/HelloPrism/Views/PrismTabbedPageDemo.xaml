@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:local="clr-namespace:HelloPrism.Views"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="HelloPrism.Views.PrismTabbedPageDemo">
+    <TabbedPage.Children>
+        <local:PrismContentPage1></local:PrismContentPage1>
+        <local:PrismContentPage2></local:PrismContentPage2>
+        <ContentPage Title="Web Page">
+            <WebView Source="https://www.microsoft.com"/>
+        </ContentPage>
+    </TabbedPage.Children>
+  
+</TabbedPage>
