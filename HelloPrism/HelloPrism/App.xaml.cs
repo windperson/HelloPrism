@@ -11,13 +11,14 @@ namespace HelloPrism
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("PrismMasterDetailPageDemo/PrismNavPage/ContentPage1");
         }
 
         protected override void RegisterTypes()
         {
-            Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<P2Page>();
+            Container.RegisterTypeForNavigation<PrismMasterDetailPageDemo>();
+            Container.RegisterTypeForNavigation<ContentPage1>();
+            Container.RegisterTypeForNavigation<PrismNavPage>();
         }
     }
 }

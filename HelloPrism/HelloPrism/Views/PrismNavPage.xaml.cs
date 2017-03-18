@@ -2,9 +2,9 @@
 
 namespace HelloPrism.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class PrismNavPage : NavigationPage
     {
-        public MainPage()
+        public PrismNavPage()
         {
             InitializeComponent();
         }

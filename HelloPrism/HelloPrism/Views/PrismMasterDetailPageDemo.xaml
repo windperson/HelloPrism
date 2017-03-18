@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="HelloPrism.Views.PrismMasterDetailPageDemo">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" BackgroundColor="Yellow" Icon="hamburger.png">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Master Page"/>
+                <Button Text="Btn1"/>
+                <Button Text="Btn2"/>
+                <Button Text="Btn3"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <!-- Where the Detail Page content will shown? -->
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Green">
+                <Label Text="Label 01"/>
+                <Label Text="Label 02"/>
+                <Label Text="Label 03"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+  
+</MasterDetailPage>
