@@ -3,13 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="HelloPrism.Views.MainPage"
-             Title="MainPage">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
+             x:Class="HelloPrism.Views.MainPage">
+    <Grid RowSpacing="3" ColumnSpacing="3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <BoxView
+            Grid.Row="0" Grid.Column="0"
+            Color="Yellow"/>
+        <BoxView
+            Grid.Row="0" Grid.Column="1"
+            Color="Yellow"/>
+        <BoxView
+            Grid.Row="0" Grid.Column="2"
+            Color="Yellow"/>
+        <BoxView
+            Grid.Row="1" Grid.Column="0"
+            Color="Aqua"/>
+        <BoxView
+            Grid.Row="1" Grid.Column="1"
+            Color="Aqua"/>
+        <BoxView
+            Grid.Row="1" Grid.Column="2"
+            Color="Aqua"/>
+        <StackLayout Grid.Row="2" Grid.Column="0">
+            <Label Text="Red BoxView's"/>
+            <Label Text="Grid.ColumnSpan"/>
+            <Label Text="Bug?"/>
+        </StackLayout>
+        <BoxView Grid.Row="2" Grid.Column="1" 
+                 Grid.ColumnSpan="3"
+                 Color="Red">
+        </BoxView>
+        <BoxView
+            Grid.Row="2" Grid.Column="2"
+            Color="Green"/>
 
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
-    </StackLayout>
+
+    </Grid>
+
 </ContentPage>
