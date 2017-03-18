@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace HelloPrism.Droid
 {
@@ -23,6 +24,9 @@ namespace HelloPrism.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
+
+            //see http://stackoverflow.com/a/38091412
+            ImageCircleRenderer.Init();
         }
     }
 

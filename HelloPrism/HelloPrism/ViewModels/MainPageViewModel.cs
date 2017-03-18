@@ -19,23 +19,10 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
-        {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
-        }
-
 
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

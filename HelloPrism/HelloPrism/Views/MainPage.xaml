@@ -2,14 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <local:CircleImage
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Source="icon.png"
+            WidthRequest="100" HeightRequest="100"
+            BorderColor="Transparent"
+            BorderThickness="0"/>
     </StackLayout>
 </ContentPage>

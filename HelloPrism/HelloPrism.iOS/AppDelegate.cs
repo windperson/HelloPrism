@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace HelloPrism.iOS
 {
@@ -26,6 +27,9 @@ namespace HelloPrism.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
+
+            //see http://stackoverflow.com/a/38091412
+            ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }
