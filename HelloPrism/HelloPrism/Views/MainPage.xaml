@@ -6,10 +6,14 @@
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
+        <Label Text="This is a very long long long long long label text"/>
+        <Label Text="wrong width:" HorizontalOptions="Start"/>
+        <BoxView BackgroundColor="Red" WidthRequest="100" HeightRequest="100">
+        </BoxView>
+        <Label Text="right width:" HorizontalOptions="Start" Margin="0,50,0,0"/>
+        <BoxView BackgroundColor="Green" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center">
 
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        </BoxView>
+
     </StackLayout>
 </ContentPage>
