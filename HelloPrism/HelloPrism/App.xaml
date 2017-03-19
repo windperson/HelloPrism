@@ -5,7 +5,7 @@
                         x:Class="HelloPrism.App">
   <prism:PrismApplication.Resources>
     <ResourceDictionary>
-      <Color x:Key="selectColor">Aqua</Color>
+      <Color x:Key="sepColor">Aqua</Color>
       <x:String x:Key="appName">The Prism Demo App</x:String>
     </ResourceDictionary>
   </prism:PrismApplication.Resources>

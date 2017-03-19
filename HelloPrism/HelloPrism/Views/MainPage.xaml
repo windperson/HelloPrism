@@ -11,7 +11,8 @@
         <Label Text="{Binding Title}" />
         <ListView ItemsSource="{Binding Students}"
                   SelectedItem="{Binding SelectedItem}"
-                  HorizontalOptions="FillAndExpand">
+                  HorizontalOptions="FillAndExpand"
+                  SeparatorColor="{StaticResource Key=sepColor}">
             <ListView.Behaviors>
                 <behaviors:EventHandlerBehavior EventName="ItemTapped">
                     <behaviors:InvokeCommandAction Command="{Binding ListItemTapCommand}" />
