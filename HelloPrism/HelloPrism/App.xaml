@@ -3,5 +3,23 @@
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         x:Class="HelloPrism.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <x:String x:Key="account_display">帳號:</x:String>
+      <Color x:Key="account_color">Black</Color>
+      <x:Double x:Key="account_fontSize">16</x:Double>
+      <x:String x:Key="account_placeholder">請輸入帳號</x:String>
 
+      <x:String x:Key="pass_display">密碼:</x:String>
+      <Color x:Key="pass_color">Black</Color>
+      <x:Double x:Key="pass_fontSize">16</x:Double>
+      <x:String x:Key="pass_placeholder">請輸入密碼</x:String>
+
+      <x:String x:Key="cancelBtn_display">取消</x:String>
+      <Color x:Key="cancelBtn_bgColor">Red</Color>
+
+      <x:String x:Key="loginBtn_display">登入</x:String>
+      <Color x:Key="loginBtn_bgColor">Green</Color>
+    </ResourceDictionary>
+  </Application.Resources>
 </prism:PrismApplication>

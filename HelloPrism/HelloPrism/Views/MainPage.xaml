@@ -5,11 +5,29 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="{DynamicResource account_display}"
+                   TextColor="{DynamicResource account_color}"
+                   FontSize="{DynamicResource account_fontSize}"
+                   />
+            <Entry Placeholder="{DynamicResource account_placeholder}"/>
 
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+            <Label Text="{DynamicResource pass_display}"
+                   TextColor="{DynamicResource pass_color}"
+                   FontSize="{DynamicResource pass_fontSize}"
+                   />
+            <Entry IsPassword="True" Placeholder="{DynamicResource pass_placeholder}"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="{DynamicResource cancelBtn_display}"
+                    BackgroundColor="{StaticResource cancelBtn_bgColor}"/>
+                <Button Text="{DynamicResource loginBtn_display}"
+                    BackgroundColor="{StaticResource loginBtn_bgColor}"/>
+            </StackLayout>
+        </StackLayout>
+
+
     </StackLayout>
 </ContentPage>
