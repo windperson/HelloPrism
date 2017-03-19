@@ -17,6 +17,7 @@
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Button Text="Update" Command="{Binding UpdateCommand}"/>
+            <Button Text="Cancel" Command="{Binding CancelCommand}"/>
         </StackLayout>
     </StackLayout>
     

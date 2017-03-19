@@ -26,16 +26,23 @@ namespace HelloPrism.ViewModels
         }
 
         public DelegateCommand UpdateCommand { get; private set; }
+        public DelegateCommand CancelCommand { get; private set; }
 
         private readonly INavigationService _navigationService;
         private readonly IEventAggregator _eventAggregator;
-        public EditItemPageViewModel(INavigationService navigationService,IEventAggregator eventAggregator)
+        public EditItemPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
         {
             _navigationService = navigationService;
             _eventAggregator = eventAggregator;
 
-            UpdateCommand = new DelegateCommand(async () => {
+            UpdateCommand = new DelegateCommand(async () =>
+            {
                 _eventAggregator.GetEvent<UpdateDataEvent>().Publish(Student);
+                await _navigationService.GoBackAsync();
+            });
+
+            CancelCommand = new DelegateCommand(async () =>
+            {
                 await _navigationService.GoBackAsync();
             });
         }
@@ -48,7 +55,13 @@ namespace HelloPrism.ViewModels
         {
             if (parameters.ContainsKey("Stub"))
             {
-                Student = parameters["Stub"] as Student;
+                var old = parameters["Stub"] as Student;
+                Student = new Student
+                {
+                    Name = old.Name,
+                    ID = old.ID,
+                    Age = old.Age
+                };
                 Title = $"Student {Student.Name}'s data";
             }
 
