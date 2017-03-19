@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="HelloPrism.Views.EditItemPage"
+             Title="{Binding Title}"
+             x:Name="EditItem">
+    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="Fill">
+        <StackLayout BindingContext="{Binding Student}">
+            <Label Text="Name:"/>
+            <Entry Text="{Binding Name}"></Entry>
+            <Label Text="ID:"/>
+            <Entry Text="{Binding ID}"></Entry>
+            <Label Text="Age:"/>
+            <Entry Text="{Binding Age}"></Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Update" Command="{Binding UpdateCommand}"/>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>
