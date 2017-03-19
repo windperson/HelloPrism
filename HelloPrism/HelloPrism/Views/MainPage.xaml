@@ -2,14 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:HelloPrism.Converters"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringToColorConverter x:Key="sTc"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <Entry WidthRequest="100" Text="{Binding InputColor}" Keyboard="Numeric"/>
+        <BoxView HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" 
+                 Color="{Binding InputColor, Converter={StaticResource sTc}}"/>
+        <Label Text="Enter number on above to change Box Color!"/>
     </StackLayout>
+    
 </ContentPage>

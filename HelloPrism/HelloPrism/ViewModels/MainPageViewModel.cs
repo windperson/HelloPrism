@@ -7,11 +7,8 @@ using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class MainPageViewModel : BindableBase
     {
-        public DelegateCommand GotoP2Command { get; set; }
-        private readonly INavigationService _navigationService;
-
         private string _title;
         public string Title
         {
@@ -19,23 +16,16 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
+        private string _color = "";
+        public string InputColor
         {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            get { return _color; }
+            set { SetProperty(ref _color, value); }
         }
 
-
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel()
         {
-            _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
+            
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
