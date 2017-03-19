@@ -17,7 +17,6 @@ namespace HelloPrism
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<P2Page>();
         }
     }
 }
