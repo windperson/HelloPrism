@@ -8,10 +8,13 @@
              Title="MainPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
-        
-        <Custom:BindableEntry EntryType="Email"/>
-        <Custom:BindableEntry EntryType="Phone"/>
-        <Custom:BindableEntry EntryType="Number"/>
+
+        <Entry Custom:AttachedEntry.EntryType="Email"/>
+        <Entry Custom:AttachedEntry.EntryType="Phone"/>
+        <Entry Custom:AttachedEntry.EntryType="Number"/>
+        <Entry Custom:AttachedEntry.EntryType="None"/>
+        <Entry Custom:AttachedEntry.EntryType="not valid value"/>
+        <Label Custom:AttachedEntry.EntryType="not applicable UI">This is a Label</Label>
 
     </StackLayout>
 </ContentPage>
