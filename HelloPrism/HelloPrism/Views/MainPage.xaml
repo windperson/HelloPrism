@@ -7,9 +7,18 @@
              Title="MainPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
-
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
+        <StackLayout>
+            <Label Text="Name:"/>
+            <Entry Text="{Binding LoginModel.Name}" Placeholder="enter name"/>
+            <Label Text="Account:"/>
+            <Entry Text="{Binding LoginModel.Account}" Placeholder="enter account"/>
+            <Label Text="PW:"/>
+            <Entry Text="{Binding LoginModel.Password}" IsPassword="True" Placeholder="enter password"/>
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Save login:"/>
+            <Switch IsToggled="{Binding LoginModel.SaveLogin}"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
