@@ -9,6 +9,11 @@ namespace HelloPrism.CustomControl
 {
     public class AttachedEntry
     {
+        public static void init()
+        {
+            //doesn't have to do anythin.
+        }
+
         public static readonly BindableProperty EntryTypeProperty =
             BindableProperty.CreateAttached(
                 propertyName: "",
