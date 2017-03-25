@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace HelloPrism.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class MainPageViewModel : BindableBase
     {
         public DelegateCommand GotoP2Command { get; set; }
         private readonly INavigationService _navigationService;
@@ -19,34 +19,39 @@ namespace HelloPrism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _userInput;
-
-        public string UserInput
+        private EntryCheckViewModel _name;
+        public EntryCheckViewModel Name
         {
-            get { return _userInput; }
-            set { SetProperty(ref _userInput, value); }
+            get { return _name; }
+            set { SetProperty(ref _name, value); }
+        }
+
+        private EntryCheckViewModel _id;
+        public EntryCheckViewModel ID
+        {
+            get { return _id; }
+            set { SetProperty(ref _id, value); }
+        }
+
+        private EntryCheckViewModel _email;
+        public EntryCheckViewModel Email
+        {
+            get { return _email; }
+            set { SetProperty(ref _email, value); }
         }
 
 
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel()
         {
-            _navigationService = navigationService;
-            GotoP2Command = new DelegateCommand(async () =>
-            {
-                Title = "I've press the putton";
-                await _navigationService.NavigateAsync($"P2Page?UserInput={UserInput}");
-            });
-        }
+            Name = new EntryCheckViewModel();
+            Name.UpdatePlaceHolder("Name");
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
+            ID = new EntryCheckViewModel();
+            ID.UpdatePlaceHolder("ID");
 
+            Email = new EntryCheckViewModel();
+            Email.UpdatePlaceHolder("Email");
         }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-            if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
-        }
+        
     }
 }

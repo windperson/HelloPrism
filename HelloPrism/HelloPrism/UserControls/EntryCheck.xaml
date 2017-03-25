@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HelloPrism.UserControls.EntryCheck">
+    <ContentView.Content>
+        <Grid
+          RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <BoxView Grid.Row="0" Grid.Column="0"
+                     VerticalOptions="Fill" HorizontalOptions="Fill"
+                     Color="#44f4dda6"/>
+            <Entry Grid.Row="0" Grid.Column="0"
+                   Placeholder="{Binding MyPlaceholder}"
+                   Text="{Binding MyEntryText}"
+                   />
+
+            <BoxView Grid.Row="0" Grid.Column="1"
+                     WidthRequest="50"
+                     VerticalOptions="Fill"
+                     Color="{Binding ValueCorrectBoxBG}"/>
+            <Label Grid.Row="0" Grid.Column="1"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"
+                   Text="{Binding ValueCorrectSymbol}"/>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

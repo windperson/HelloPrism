@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userCtr="clr-namespace:HelloPrism.UserControls"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HelloPrism.Views.MainPage"
              Title="MainPage">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <StackLayout Margin="20,0" HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
+        <userCtr:EntryCheck
+            BindingContext="{Binding Name}"/>
+        <userCtr:EntryCheck
+            BindingContext="{Binding ID}"/>
+        <userCtr:EntryCheck
+            BindingContext="{Binding Email}"/>
 
-        <Editor Text="{Binding UserInput}"/>
-        <Button Text="Goto P2"
-                Command="{Binding GotoP2Command}" />
     </StackLayout>
 </ContentPage>
