@@ -32,7 +32,7 @@ namespace HelloPrism.ViewModels
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-            
+
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
@@ -41,6 +41,10 @@ namespace HelloPrism.ViewModels
             {
                 Param = parameters["UserInput"] as string;
             }
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
         }
     }
 }
